@@ -1,0 +1,37 @@
+-- Database: EmpDB
+
+-- DROP DATABASE IF EXISTS "EmpDB";
+
+CREATE DATABASE "EmpDB"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_India.1252'
+    LC_CTYPE = 'English_India.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+
+COMMENT ON DATABASE "EmpDB"
+    IS 'EmpDB';
+
+
+
+-------------
+
+
+-- Table: public.TblKeyval
+
+-- DROP TABLE IF EXISTS public."TblKeyval";
+
+CREATE TABLE IF NOT EXISTS public."TblKeyval"
+(
+    "KName" uuid NOT NULL,
+    "KValue" character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "TblKeyval_pkey" PRIMARY KEY ("KName")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."TblKeyval"
+    OWNER to postgres;
